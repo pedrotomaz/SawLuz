@@ -1,0 +1,42 @@
+﻿@model SawLuz.Models.Prato
+
+@{
+    ViewBag.Title = "Excluir Prato";
+}
+
+<h2>Excluir Prato</h2>
+
+<h3>Deseja realmente excluir este Prato?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" /> 
+            <a href="@Url.Action("Index", "Prato")">
+                <div class="btn btn-primary"> Cancelar </div>
+            </a>
+        </div>
+    }
+</div>
